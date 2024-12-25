@@ -10,7 +10,7 @@ export default function Layout() {
     // }}
     >
       <Drawer.Screen
-        name="(tabs)"
+        name="(stack)"
         options={{
           drawerLabel: "Tabs",
           headerShown: false, // タブ内で独自のヘッダーを管理
