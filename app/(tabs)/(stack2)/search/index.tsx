@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default function Search() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to the User!</Text>
+      <Text style={styles.text}>Welcome to the Search Tab!</Text>
     </View>
   );
 }
