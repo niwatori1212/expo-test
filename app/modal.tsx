@@ -1,12 +1,9 @@
-import { Link } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Search() {
+export default function Settings() {
   return (
     <View style={styles.container}>
-      <Link href="/(tabs)/(2list)/user">リンク</Link>
-      <Text style={styles.text}>Welcome to the stack2 Tab!</Text>
-      <Link href="/settings">セッティング</Link>
+      <Text style={styles.text}>モーダル！</Text>
     </View>
   );
 }

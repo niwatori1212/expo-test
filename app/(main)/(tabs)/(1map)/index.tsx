@@ -1,9 +1,11 @@
+import { Link } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Settings() {
+export default function Search() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to the Settings Screen!</Text>
+      <Link href="/(main)/(tabs)/(1map)/user">リンク</Link>
+      <Text style={styles.text}>Welcome to the stack1 Tab!</Text>
     </View>
   );
 }
