@@ -33,8 +33,8 @@ export default function Layout() {
         headerTitleAlign: "center", // タイトルを中央揃え
       }}
     >
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="search" />
+      <Stack.Screen name="index" />
+      <Stack.Screen name="user" />
     </Stack>
   );
 }

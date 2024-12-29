@@ -15,26 +15,35 @@ export default function Layout() {
   const navigation = useNavigation<DrawerNavigationProp<RootParamList>>();
 
   return (
-    <Tabs
-    // screenOptions={{
-    //   headerShown: false,
-    //   // headerLeft: () =>
-    //   //   navigation.canGoBack() ? (
-    //   //     // 戻れる画面がある場合、戻るボタンを表示
-    //   //     <Pressable onPress={() => navigation.goBack()}>
-    //   //       <Ionicons name="arrow-back" size={24} color="black" />
-    //   //     </Pressable>
-    //   //   ) : (
-    //   //     // 戻れる画面がない場合、ハンバーガーメニューを表示
-    //   //     <Pressable onPress={() => navigation.openDrawer()}>
-    //   //       <Ionicons name="menu" size={24} color="black" />
-    //   //     </Pressable>
-    //   //   ),
-    //   // headerTitleAlign: "center", // タイトルを中央揃え
-    // }}
-    >
-      <Tabs.Screen name="(stack)" options={{ headerShown: false }} />
-      <Tabs.Screen name="(stack2)" options={{ headerShown: false }} />
+    <Tabs>
+      <Tabs.Screen
+        name="(1map)"
+        options={{
+          title: "地図",
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "map-sharp" : "map-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="(2list)"
+        options={{
+          title: "一覧",
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "list-sharp" : "list-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
