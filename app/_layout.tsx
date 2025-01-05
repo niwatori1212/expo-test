@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { Pressable, Text } from "react-native";
+import { Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
