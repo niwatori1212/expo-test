@@ -11,23 +11,61 @@ export default function Layout() {
   return (
     <Stack
       screenOptions={{
-        headerLeft: ({ canGoBack }) =>
-          canGoBack ? (
-            // 戻れる画面がある場合、戻るボタンを表示
-            <Pressable onPress={() => router.back()}>
-              <Ionicons name="arrow-back" size={24} color="black" />
-            </Pressable>
-          ) : (
-            // 戻れる画面がない場合、ハンバーガーメニューを表示
-            <Pressable onPress={() => navigation.openDrawer()}>
-              <Ionicons name="menu" size={24} color="black" />
-            </Pressable>
-          ),
         headerShown: true,
-        headerTitleAlign: "center", // タイトルを中央揃え
+        headerTitleAlign: "center",
       }}
     >
-      <Stack.Screen name="(top-tabs)" options={{ title: "Top Tabs" }} />
+      <Stack.Screen
+        name="(top-tabs)"
+        options={{
+          title: "Top Tabs",
+          headerStyle: {
+            backgroundColor: "#006a6c",
+          },
+          headerShadowVisible: false,
+          headerLeft: ({ canGoBack }) =>
+            canGoBack ? (
+              <Pressable onPress={() => router.back()}>
+                <Ionicons name="arrow-back" size={24} color="black" />
+              </Pressable>
+            ) : (
+              <Pressable onPress={() => navigation.openDrawer()}>
+                <Ionicons name="menu" size={24} color="black" />
+              </Pressable>
+            ),
+          headerRight: () => (
+            <Pressable
+              onPress={() => {
+                router.push("/search");
+              }}
+            >
+              <Ionicons name="search" size={24} color="white" />
+            </Pressable>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="search/index"
+        options={{
+          title: "Search",
+          contentStyle: {
+            backgroundColor: "#fff",
+          },
+          headerShadowVisible: true,
+          presentation: "transparentModal",
+          animation: "fade",
+          headerLeft: ({ canGoBack }) =>
+            canGoBack ? (
+              <Pressable onPress={() => router.back()}>
+                <Ionicons name="arrow-back" size={24} color="black" />
+              </Pressable>
+            ) : (
+              <Pressable onPress={() => navigation.openDrawer()}>
+                <Ionicons name="menu" size={24} color="black" />
+              </Pressable>
+            ),
+        }}
+      />
     </Stack>
   );
 }
