@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useRouter } from "expo-router";
-import { Pressable } from "react-native";
+import { Pressable, TextInput } from "react-native";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,6 +13,7 @@ export default function Layout() {
       screenOptions={{
         headerShown: true,
         headerTitleAlign: "center",
+        headerShadowVisible: true,
       }}
     >
       <Stack.Screen
@@ -47,7 +48,21 @@ export default function Layout() {
       <Stack.Screen
         name="search/index"
         options={{
-          title: "Search",
+          headerTitle: () => (
+            <TextInput
+              style={{
+                backgroundColor: "#f0f0f0",
+                width: "80%",
+                height: 36,
+                borderRadius: 8,
+                paddingHorizontal: 12,
+                fontSize: 16,
+              }}
+              placeholder="検索"
+              placeholderTextColor="#999"
+              autoFocus={true}
+            />
+          ),
           contentStyle: {
             backgroundColor: "#fff",
           },
