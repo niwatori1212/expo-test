@@ -1,21 +1,7 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "tamagui"; // or '@tamagui/core'
 
-export default function Settings() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>モーダル！</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-});
+export default () => (
+  <View mx={100} scale={1.4}>
+    <Text color="$color">Hello</Text>
+  </View>
+);
